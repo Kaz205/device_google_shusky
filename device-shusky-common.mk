@@ -31,3 +31,7 @@ endif
 
 PRODUCT_COPY_FILES += \
 	$(TARGET_VENDOR_PERF_CONFIG_PATH)/powerhint-$(TARGET_DEVICE).json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
+# For Google Camera
+PRODUCT_COPY_FILES += \
+    device/google/shusky/the_experiences.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/the_experiences.xml
