@@ -25,3 +25,5 @@ PRODUCT_BRAND := google
 PRODUCT_NAME := husky
 PRODUCT_DEVICE := husky
 PRODUCT_MODEL := Pixel 8 Pro
+
+$(call inherit-product, vendor/google/husky/husky-vendor.mk)
