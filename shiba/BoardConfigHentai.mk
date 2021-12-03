@@ -5,3 +5,5 @@
 #
 
 include device/google/shusky/BoardConfigHentai.mk
+
+include vendor/google/shiba/BoardConfigVendor.mk

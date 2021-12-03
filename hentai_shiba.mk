@@ -25,3 +25,5 @@ PRODUCT_BRAND := google
 PRODUCT_NAME := shiba
 PRODUCT_DEVICE := shiba
 PRODUCT_MODEL := Pixel 8
+
+$(call inherit-product, vendor/google/shiba/shiba-vendor.mk)
