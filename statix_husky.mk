@@ -8,6 +8,8 @@ $(call inherit-product, vendor/statix/config/gsm.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/google/shusky/aosp_husky.mk)
+$(call inherit-product, device/google/shusky/shiba/device-statix.mk)
+$(call inherit-product, device/google/zuma/statix_common.mk)
 
 # Parts
 $(call inherit-product-if-exists, vendor/google/pixelparts/pixelparts.mk)
@@ -25,3 +27,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="husky-user 14 UD1A.230803.041 10808477 release-keys"
 
 BUILD_FINGERPRINT := $(PRODUCT_OVERRIDE_FINGEPRINT)
+
+$(call inherit-product, vendor/google/shiba/shiba-vendor.mk)

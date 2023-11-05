@@ -1,4 +1,4 @@
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/overlay-calyx
+DEVICE_PACKAGE_OVERLAYS += device/google/shusky/overlay-statix
 
 # Display
 PRODUCT_COPY_FILES += \
