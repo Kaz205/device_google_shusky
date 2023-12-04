@@ -19,7 +19,7 @@ TARGET_BOARD_KERNEL_HEADERS := device/google/shusky-kernel/kernel-headers
 
 LOCAL_PATH := device/google/shusky
 
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
 
@@ -129,28 +129,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.gms.dck.eligible_wcc=3 \
     ro.gms.dck.se_capability=1
 
-# Bluetooth hci_inject test tool
-PRODUCT_PACKAGES_DEBUG += \
-    hci_inject
-
 # Bluetooth OPUS codec
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.opus.enabled=true
-
-# Bluetooth SAR test tool
-PRODUCT_PACKAGES_DEBUG += \
-    sar_test
-
-# Bluetooth EWP test tool
-PRODUCT_PACKAGES_DEBUG += \
-    ewp_tool
 
 # Bluetooth AAC VBR
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
 
 # Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=295006 \
     persist.bluetooth.bqr.vnd_quality_mask=29 \
@@ -242,7 +230,7 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 PRODUCT_COPY_FILES += \
        device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
 
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
         PRODUCT_COPY_FILES += \
             device/google/shusky/location/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
             device/google/shusky/location/scd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf \
@@ -324,7 +312,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=3
 
 # WLC userdebug specific
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
         device/google/zuma/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
 endif
