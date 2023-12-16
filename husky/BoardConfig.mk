@@ -59,6 +59,8 @@ include device/google/zuma/BoardConfig-common.mk
 include device/google/shusky-sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
 
+include device/google/shusky/husky/BoardConfigHentai.mk
+
 # Android Virtualization Framework (AVF) team is using husky with hypervisor in
 # nvhe mode as a development platform to build infrastructure that supports
 # assigning devices to guest VMs.
