@@ -249,15 +249,6 @@
         @left
     </string>
 
-    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
-        M 478.5,0
-        h 122
-        v 132
-        h -122
-        Z
-        @left
-    </string>
-
     <!-- A string config in svg path format for the main display shape.
          (@see https://www.w3.org/TR/SVG/paths.html#PathData).
 

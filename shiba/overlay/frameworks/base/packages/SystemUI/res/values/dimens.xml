@@ -30,4 +30,7 @@
     <!-- Offset should not be more than 1mm -->
     <dimen name="udfps_burn_in_offset_x">6px</dimen>
     <dimen name="udfps_burn_in_offset_y">17px</dimen>
+
+    <!-- the padding on the top of the statusbar (usually 0) -->
+    <dimen name="status_bar_padding_top">9dp</dimen>
 </resources>
