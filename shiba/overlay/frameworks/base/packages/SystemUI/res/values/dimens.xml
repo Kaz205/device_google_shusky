@@ -33,4 +33,7 @@
 
     <!-- Pixel pitch of the device. um/px -->
     <item name="pixel_pitch" format="float" type="dimen">59.5</item>
+
+    <!-- the padding on the top of the statusbar (usually 0) -->
+    <dimen name="status_bar_padding_top">9dp</dimen>
 </resources>
