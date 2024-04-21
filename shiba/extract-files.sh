@@ -59,6 +59,14 @@ function prepare_firmware() {
     fi
 }
 
+function blob_fixup() {
+    case "${1}" in
+    *.rc)
+        sed -i '/service.*\/bin\//a\    setenv JE_MALLOC_ZERO_FILLING 1' "${2}"
+        ;;
+    esac
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
