@@ -5,7 +5,7 @@
 #
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-hentai
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-statix
 
 # ANGLE - Almost Native Graphics Layer Engine
 PRODUCT_PACKAGES += \

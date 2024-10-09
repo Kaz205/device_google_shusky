@@ -15,15 +15,15 @@
 #
 
 # Inherit device configuration
-$(call inherit-product, device/google/shusky/aosp_shiba.mk)
-$(call inherit-product, device/google/zuma/hentai_common.mk)
+$(call inherit-product, device/google/shusky/aosp_husky.mk)
+$(call inherit-product, device/google/zuma/statix_common.mk)
 
-include device/google/shusky/shiba/device-hentai.mk
+include device/google/shusky/husky/device-statix.mk
 
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := google
-PRODUCT_NAME := shiba
-PRODUCT_DEVICE := shiba
-PRODUCT_MODEL := Pixel 8
+PRODUCT_NAME := husky
+PRODUCT_DEVICE := husky
+PRODUCT_MODEL := Pixel 8 Pro
 
-$(call inherit-product, vendor/google/shiba/shiba-vendor.mk)
+$(call inherit-product, vendor/google/husky/husky-vendor.mk)
