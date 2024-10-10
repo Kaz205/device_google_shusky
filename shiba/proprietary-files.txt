@@ -57,7 +57,7 @@ product/etc/permissions/com.android.sdm.plugins.dcmo.xml
 product/etc/permissions/com.android.sdm.plugins.diagmon.xml
 product/lib64/libdmengine.so
 product/lib64/libdmjavaplugin.so
-product/priv-app/CarrierSettings/CarrierSettings.apk;PRESIGNED
+product/priv-app/CarrierSettings_signed_45.0.591154042/CarrierSettings_signed_45.0.591154042.apk;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
 product/priv-app/ConnMO/ConnMO.apk
 product/priv-app/DCMO/DCMO.apk
@@ -150,7 +150,5 @@ system_ext/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so
 system_ext/priv-app/OemRilService/OemRilService.apk;PRESIGNED
 
 # VZW
-system_ext/etc/permissions/com.verizon.llkagent.xml
 system_ext/etc/permissions/vzw_mvs_permissions.xml
-system_ext/priv-app/LLKAgent/LLKAgent.apk
 system_ext/priv-app/MyVerizonServices/MyVerizonServices.apk;PRESIGNED
