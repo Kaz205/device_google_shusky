@@ -5,8 +5,7 @@
 #
 
 # Inherit some common stuff
-TARGET_DISABLE_EPPE := true
-$(call inherit-product, vendor/hentai/config/common_full_phone.mk)
+$(call inherit-product, vendor/hentai/build/product/hentai_product.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := shiba
