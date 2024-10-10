@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-include $(DEVICE_PATH)/BoardConfigLineage.mk
+$(call inherit-product, $(DEVICE_PATH)/device-hentai.mk)
 
-include $(VENDOR_PATH)/BoardConfigVendor.mk
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
