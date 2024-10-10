@@ -16,6 +16,12 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../../.."
 
+export TARGET_ENABLE_CHECKELF=true
+
+# If XML files don't have comments before the XML header, use this flag
+# Can still be used with broken XML files by using blob_fixup
+export TARGET_DISABLE_XML_FIXING=true
+
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
@@ -59,31 +65,9 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
-function blob_fixup() {
-    case "${1}" in
-        product/etc/felica/common.cfg)
-            [ "$2" = "" ] && return 0
-            sed -i -e '$a00000018,1' -e '/^00000014/d' -e '/^00000015/d' "${2}"
-            ;;
-        vendor/etc/init/init.modem_logging_control.rc)
-            [ "$2" = "" ] && return 0
-            sed -i 's/ && property:ro.debuggable=0//' "${2}"
-            ;;
-        *)
-            return 1
-            ;;
-    esac
-
-    return 0
-}
-
-function blob_fixup_dry() {
-    blob_fixup "$1" ""
-}
-
 function prepare_firmware() {
     if [ "${SRC}" != "adb" ]; then
-        bash "${ANDROID_ROOT}"/lineage/scripts/pixel/prepare-firmware.sh "${DEVICE}" "${SRC}"
+        bash "${ANDROID_ROOT}"/calyx/scripts/pixel/prepare-firmware.sh "${DEVICE}" "${SRC}"
     fi
 }
 
@@ -133,3 +117,4 @@ if [ -z "${SECTION}" ]; then
 fi
 
 "${MY_DIR}/setup-makefiles.sh"
+

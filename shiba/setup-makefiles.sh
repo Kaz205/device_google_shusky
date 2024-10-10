@@ -16,6 +16,8 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../../.."
 
+export TARGET_ENABLE_CHECKELF=true
+
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
@@ -74,7 +76,14 @@ write_makefiles "${MY_DIR}/proprietary-files.txt"
 write_makefiles "${MY_DIR}/proprietary-files-carriersettings.txt"
 write_makefiles "${MY_DIR}/proprietary-files-vendor.txt"
 
+write_rro_package "CarrierConfigOverlay" "com.android.carrierconfig" product
+write_single_product_copy_files "product/etc/apns-conf.xml"
+write_single_product_packages "CarrierConfigOverlay"
+
 append_firmware_calls_to_makefiles "${MY_DIR}/proprietary-firmware.txt"
+
+bash "${ANDROID_ROOT}"/calyx/scripts/pixel/prepare-firmware-makefiles.sh "${DEVICE}" "${ANDROIDMK}" "${BOARDMK}"
 
 # Finish
 write_footers
+
