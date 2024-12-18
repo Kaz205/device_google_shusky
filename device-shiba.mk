@@ -28,10 +28,10 @@ RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_
 $(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_SHIBA_DIR))
 
 
-TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_SHIBA_VERSION)
+TARGET_LINUX_KERNEL_VERSION := 5.15
 # Keeps flexibility for kasan and ufs builds
-TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_SHIBA_DIR)
-TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_SHIBA_DIR)/kernel-headers
+TARGET_KERNEL_DIR ?= device/google/shusky-kernels/5.15/24Q4-12506254
+TARGET_BOARD_KERNEL_HEADERS ?= device/google/shusky-kernels/5.15/24Q4-12506254/kernel-headers
 
 LOCAL_PATH := device/google/shusky
 
@@ -405,13 +405,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio.hapticgenerator.distortion.output.gain=0.38
 
-# Increment the SVN for any official public releases
-ifdef RELEASE_SVN_SHIBA
-TARGET_SVN ?= $(RELEASE_SVN_SHIBA)
-else
-# Set this for older releases that don't use build flag
-TARGET_SVN ?= 38
-endif
+TARGET_SVN ?= 42
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=$(TARGET_SVN)

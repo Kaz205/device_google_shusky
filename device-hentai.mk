@@ -33,3 +33,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
+
+RELEASE_PIXEL_2023_ENABLED := true
+RELEASE_PIXEL_AIDL_BATTERY_MITIGATION_HAL := true
