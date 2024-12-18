@@ -22,6 +22,8 @@ BOARD_KERNEL_CMDLINE += fips140.load_sequential=1
 BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
 BOARD_KERNEL_CMDLINE += g2d.load_sequential=1
 BOARD_KERNEL_CMDLINE += samsung_iommu_v9.load_sequential=1
+BOARD_BOOTCONFIG += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 TARGET_BOARD_INFO_FILE := device/google/shusky/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := shiba
