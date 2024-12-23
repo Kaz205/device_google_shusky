@@ -12,7 +12,7 @@ android_library {
     resource_dirs: [
         "res",
     ],
-    manifest: ":Settings_manifest",
+    use_resource_processor: true,
 }
 
 android_app {
@@ -28,6 +28,7 @@ android_app {
         "SettingsIntelligenceGooglePrebuilt",
     ],
     static_libs: ["FaceEnrollSettingsOverlay-core"],
+    use_resource_processor: true,
     uses_libs: ["org.apache.http.legacy"],
     optional_uses_libs: [
         "androidx.window.extensions",
@@ -42,9 +43,4 @@ android_app {
     overrides: [
         "SettingsGoogle",
     ],
-    manifest: ":Settings_manifest",
-    additional_manifests: [
-        "AndroidManifest.xml",
-        ":SettingsGoogle_manifest",
-        ],
 }
