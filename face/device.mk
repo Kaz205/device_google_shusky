@@ -3,10 +3,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Face unlock
-PRODUCT_PACKAGES += \
-    SettingsGoogleFutureFaceEnroll
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/face/overlay
 
