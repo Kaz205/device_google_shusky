@@ -43,4 +43,5 @@ android_app {
     overrides: [
         "Settings",
     ],
+    plugins: ["androidx.room_room-compiler-plugin"],
 }
