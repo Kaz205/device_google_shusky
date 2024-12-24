@@ -28,7 +28,7 @@ android_app {
         "settings-platform-compat-config",
         "SettingsIntelligenceGooglePrebuilt",
     ],
-    static_libs: ["FaceEnrollSettingsOverlay-core"],
+    static_libs: ["FaceEnrollSettingsOverlay-core", "Settings-core"],
     use_resource_processor: true,
     uses_libs: ["org.apache.http.legacy"],
     optional_uses_libs: [
