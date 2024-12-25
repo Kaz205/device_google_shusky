@@ -5,5 +5,4 @@
 -->
 <resources>
     <attr name="secureValue" format="string" />
-    <attr name="sucUsePartnerResource" format="boolean" />
 </resources>
