@@ -1,12 +1,12 @@
 package com.statix.android.settings.biometrics.face;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-
 import androidx.fragment.app.FragmentActivity;
+import androidx.window.R;
 
-import com.android.settings.R;
 import com.android.settings.biometrics.face.FaceEnrollEnrolling;
 
 public class FaceEnrollActivityDirector extends FragmentActivity {
@@ -46,13 +46,10 @@ public class FaceEnrollActivityDirector extends FragmentActivity {
 
     private void startEnrollActivity(Intent intent) {
         Intent enrollIntent;
-        boolean trafficLight =
-                getResources().getBoolean(R.bool.config_face_enroll_use_traffic_light);
+        boolean trafficLight = getResources().getBoolean(R.bool.config_face_enroll_use_traffic_light);
         // Use SettingsGoogleFutureFaceEnroll
         if (trafficLight) {
-            enrollIntent =
-                    new Intent(
-                            "com.google.android.settings.future.biometrics.faceenroll.action.ENROLL");
+            enrollIntent = new Intent("com.google.android.settings.future.biometrics.faceenroll.action.ENROLL");
         } else {
             enrollIntent = new Intent(this, FaceEnrollEnrolling.class);
         }

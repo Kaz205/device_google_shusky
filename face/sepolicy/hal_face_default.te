@@ -24,13 +24,12 @@ wakelock_use(hal_face_default)
 # Grant TEE access to the face HAL
 allow hal_face_default tee_device:chr_file rw_file_perms;
 allow hal_face_default vndbinder_device:chr_file ioctl;
-allow hal_face_default gxp_device:chr_file { open read write ioctl };
 
 #Allow face hal to talk to process serving ITokenManager(libmediandk)
 allow hal_face_default hidl_token_hwservice:hwservice_manager find;
 
 #Allow face hal to talk to cameraserver
-allow hal_face_default fwk_camera_service:service_manager find;
+allow hal_face_default fwk_camera_hwservice:hwservice_manager find;
 binder_call(hal_face_default, camera_service_server)
 binder_call(camera_service_server, hal_face_default)
 
@@ -57,6 +56,3 @@ binder_use(hal_face_default)
 
 # Allow the face HAL to communicate with the thermal HAL.
 hal_client_domain(hal_face_default, hal_thermal)
-
-# Allow the face HAL to communicate with system_app.
-binder_call(hal_face_default, system_app)
