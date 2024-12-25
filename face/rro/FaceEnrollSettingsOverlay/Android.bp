@@ -13,7 +13,6 @@ android_library {
         "res",
     ],
     use_resource_processor: true,
-    plugins: ["androidx.room_room-compiler-plugin"],
 }
 
 android_app {
@@ -44,4 +43,5 @@ android_app {
     overrides: [
         "Settings",
     ],
+    plugins: ["androidx.room_room-compiler-plugin"],
 }
