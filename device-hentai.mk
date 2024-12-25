@@ -36,5 +36,3 @@ PRODUCT_PACKAGES += \
 
 RELEASE_PIXEL_2023_ENABLED := true
 RELEASE_PIXEL_AIDL_BATTERY_MITIGATION_HAL := true
-
-$(call inherit-product, device/google/shusky/face/device.mk)
