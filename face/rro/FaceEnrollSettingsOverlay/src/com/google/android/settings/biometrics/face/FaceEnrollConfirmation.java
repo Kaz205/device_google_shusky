@@ -56,7 +56,7 @@ public class FaceEnrollConfirmation extends FragmentActivity {
                                     }
                                 })
                         .setButtonType(5)
-                        .setTheme(com.google.android.setupdesign.R.style.SudGlifButton_Primary)
+                        .setTheme(R.style.SudGlifButton_Primary)
                         .build());
     }
 
